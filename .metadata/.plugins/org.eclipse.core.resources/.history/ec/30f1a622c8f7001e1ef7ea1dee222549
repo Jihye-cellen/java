@@ -1,0 +1,27 @@
+package practice;
+
+public class Order {
+	
+	String type;
+	String color;
+	int price;
+	int qnt;//field
+	
+	
+	public Order(String type, String color, int price, int qnt) {
+		super();
+		this.type = type;
+		this.color = color;
+		this.price = price;
+		this.qnt = qnt;
+	}//생성자
+
+	
+	public double total() {
+		int total = price * qnt;
+				return total;
+	}
+	
+	
+}//class
+

@@ -1,0 +1,17 @@
+package practice;
+
+import java.util.*;
+
+public class Sub01_2 {
+	public static void run() {
+		ArrayList<Order> order =new ArrayList<>();
+		Order s1 = new Order("바지", "청색", 35000, 25);
+		Order s2 = new Order("치마", "베이지색", 25000, 30);
+		Order s3 = new Order("자켓", "검정색", 60000, 18);
+		
+		Order.add(s1);
+		Order.add(s2);
+		Order.add(s3);
+		
+	}
+}

@@ -1,0 +1,12 @@
+package am;
+
+public class Sub02 {
+	
+	public static void run() {
+		boolean run = true;
+		while(run) {
+		System.out.println("----------------------------------");
+		
+		}//while
+	}//run
+}//class

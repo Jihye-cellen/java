@@ -1,0 +1,37 @@
+package sale;
+
+import java.util.*;
+
+
+public class SaleVO {
+	private int seq;
+	private String code;
+	private Date date;
+	private int qnt;
+	
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public int getQnt() {
+		return qnt;
+	}
+	public void setQnt(int qnt) {
+		this.qnt = qnt;
+	}
+	
+}

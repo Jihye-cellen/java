@@ -1,0 +1,15 @@
+package juso;
+
+import java.io.*;
+import java.util.*;
+
+public class JusoDAO {//DAO: data access object
+ //주소목록
+	public ArrayList<Juso> list(){
+		File file = new File ("c:/data/java/ex05/address.txt");
+		
+		ArrayList<Juso> array = new ArrayList<Juso>();
+		
+		return array;
+	}
+}

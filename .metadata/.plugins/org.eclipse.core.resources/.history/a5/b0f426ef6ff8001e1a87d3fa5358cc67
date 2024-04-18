@@ -1,0 +1,32 @@
+package am;
+
+import java.util.*;
+
+public class Sub01 {
+	public static void run() {
+		ArrayList<Car> cars=new ArrayList<Car>();
+		
+		Car car1 = new Car();
+		car1.company="현대";
+		car1.model="그랜저";
+		car1.color="검정";
+		car1.distance=60000;
+		car1.date="2021-06";
+		cars.add(car1);
+		
+		car1 = new Car();
+		car1.company="쌍용";
+		car1.model="티볼리";
+		car1.color="파랑";
+		car1.distance=80000;
+		car1.date="2020-07";
+		cars.add(car1);
+		
+		car1= new Car("기아", "k7", "흰색", 100000);
+		cars.add(car1);
+		for(Car car:cars) {
+			car.print();
+			System.out.println("");
+		}
+	}
+}

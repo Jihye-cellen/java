@@ -1,0 +1,29 @@
+package sale;
+
+import java.util.*;
+
+import product.Database;
+
+import java.sql.*;
+public class SaleDAO {
+	public ArrayList<SaleVO> list(){
+		Connection con = Database.con; 
+		ArrayList<SaleVO> array = new ArrayList<SaleVO>();
+		try {
+			String sql = "select sale_date, code, sum(qnt), price, name";
+			sql +="from view_sale";
+			sql +="group by sale_date, code, price, name";
+			sql +="order by sale_date, code";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				SaleVO vo = new SaleVO();
+			}
+			
+		}catch(Exception e) {
+			System.out.println("매출현황"+ e.toString());
+		}
+		return array;
+	}
+	
+}

@@ -1,0 +1,30 @@
+package pm;
+
+import java.io.*;
+import java.util.StringTokenizer;
+
+import am.Car;
+
+public class Sub02 {
+	public static void run() {
+		File file=new File("c:/data/java/car.txt");
+		try {
+			BufferedReader readr= new BufferedReader(new FileReader(file));
+			String line ="";
+			StringTokenizer st = null;
+			while((line=readr.readLine()) !=null)
+				st=new StringTokenizer(line,",");
+				String no=st.nextToken();
+				String company=st.nextToken();
+				String model=st.nextToken();
+				String color=st.nextToken();
+				String distance=st.nextToken();
+				String date=st.nextToken();
+				
+				Car cal=new Car(no, company, model, color, Integer.parseInt(distacne), date);
+				
+		}catch(Exception e) {
+			System.out.println("오류"+ e.toString());
+		}
+	}
+}

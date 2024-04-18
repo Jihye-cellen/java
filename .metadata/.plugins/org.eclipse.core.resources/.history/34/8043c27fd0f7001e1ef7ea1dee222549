@@ -1,0 +1,18 @@
+package pm;
+
+public class Sale {
+	String code;
+	String name;
+	int price;
+	int qnt;
+	
+	//금액을 구하는 메서드
+	public int sum() {
+		int sum = price * qnt;
+		return sum;
+	}
+	
+	public void print_land() {
+		System.out.printf("%s\t%s\t%,d원\t%d개\t%,d원\n", code, name, price, qnt, sum());
+	}
+}

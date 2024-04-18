@@ -1,0 +1,23 @@
+package juso;
+
+import java.io.*;
+import java.util.*;
+
+public class JusoDAO {//DAO: data access object
+ //주소목록
+	
+	File file = new File ("c:/data/java/ex05/juso.txt");
+	public ArrayList<Juso> list(){
+		ArrayList<Juso> array = new ArrayList<Juso>();
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+			String line="";
+			while((line=reader.readLine())!= null) {
+				
+			}
+		}catch(Exception e){
+			System.out.println("주소목록:"+ e.toString());
+		}
+		return array;
+	}
+}

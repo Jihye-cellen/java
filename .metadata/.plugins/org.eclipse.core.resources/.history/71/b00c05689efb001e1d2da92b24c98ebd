@@ -1,0 +1,11 @@
+package professor;
+
+import java.util.*;
+
+public class ProDAO {
+	//목록출력
+	public ArrayList<ProVO> list(){
+		ArrayList<ProVO> array= new ArrayList<ProVO>();
+		return array;
+	}
+}

@@ -1,0 +1,21 @@
+package am;
+
+public class Student {
+	//field 클래스에는 필드가 들어간다. 학번=문자(연산하는 것이 아니기 때문에 문자로 취급)
+	//클래스가 가질 수 있는 필드=속성 (property)
+	String no;
+	String name;
+	String juso;
+	String phone;
+	
+	//생성자
+	public Student() {
+		
+	}
+	
+	//method = 명령어의 집합
+	public void print() {
+		System.out.printf("학번:%s\n이름:%s\n주소:%s\n전화:%s\n",no, name, juso, phone);
+	}
+	
+}

@@ -1,0 +1,20 @@
+package am;
+
+import java.util.*;
+
+public class Sub01 {
+	public static void run() {
+		ArrayList<Car> cars=new ArrayList<Car>();
+
+		Car car1= new Car("기아", "k7");
+		car1.setColor("흰색");
+		car1.setDistance(100000);
+		car1.setDate("2021-03");
+		cars.add(car1);
+		for(Car car:cars) {
+			System.out.printf("%s\t%s\t%s\t%,d\t%s\n", car.getCompany(), car.getModel(), 
+					car.getColor(), car.getDistance(), car.getDate());
+			System.out.println("");
+		}
+	}
+}

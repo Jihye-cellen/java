@@ -1,0 +1,7 @@
+package practice;
+
+public class Order {
+	public static void run() {
+		
+	}
+}

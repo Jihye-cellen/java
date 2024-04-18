@@ -1,0 +1,14 @@
+package professor;
+
+import java.sql.*;
+
+public class Database {
+	public static Connection con;
+	static {
+		try {
+			
+		}catch(Exception e) {
+			System.out.println("접속실패:" + e.toString());
+		}
+	}
+}
