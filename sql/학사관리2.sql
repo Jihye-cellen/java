@@ -176,4 +176,48 @@ select p.pname, s.dept, s.sname, e.grade from professors p, students s, courses 
 select s.scode, s.sname, c.lcode, c.lname, p.pname from professors p, students s, courses c, enrollments e where e.grade>=80 and s.scode = e.scode and c.instructor = p.pcode and c.lcode = e.lcode;
 
 
+/*3.조회*/
+/*3.교수들의 총 급여액과 평균 급여액을 구하시오.*/
+select sum(salary) salary_sum, avg(salary) salary_avg from professors;
 
+/*전산과 교수들의 총 급여액과 평균 급여액을 구하시오.*/
+select sum(salary) salary_sum, avg(salary) salary_avg from professors where dept='전산';
+
+/*수강신청 한 과목들 중에서 최고 점수와 최저 점수를 구하시오.*/
+select max(grade), min(grade) from enrollments;
+
+/*전산과 학생들은 모두 몇 명인지 구하시오.*/
+select count(*) from students where dept = '전산';
+
+/*수강신청 한 학생들은 모두 몇 명인지 구하시오.*/
+select count(distinct(scode))from enrollments;
+
+/*각 학과별 학생들의 수를 구하시오.*/
+select dept, count(scode) from students group by dept order by count(scode) desc;
+
+/*교수들을 소속학과별, 직급별로 분류하여 각 직급별 평균 급여액수를 구하시오.*/
+select dept, title, avg(salary), count(pcode) from professors group by dept, title order by dept, title;
+
+/*각 학생들에 대해 학번, 학생이름, 수강신청 과목들의 평균 점수를 구하시오.*/
+select s.scode, s.sname, s.dept, avg(e.grade), count(lcode), p.pname from students s, enrollments e, professors p 
+where s.scode = e.scode and p.pcode=s.advisor group by s.scode, s.sname, s.dept, p.pname order by avg(e.grade) desc;
+
+drop view enr_stu_pro;
+create view enr_stu_pro as
+select e.*, sname, s.dept stu_dept, pname, p.dept pro_dept 
+from enrollments e, students s, professors p 
+where e.scode = s. scode and s.advisor= p.pcode;
+select * from enr_stu_pro;
+
+/*각 학생들에 대해 수강신청 과목들의 평균 점수를 구하시오.*/
+select s.sname, c.lname, avg(e.grade) from students s, enrollments e, courses c where s.scode = e.scode and e.lcode = c.lcode group by s.sname, c.lname;
+
+create view eno_stu_cou as
+select e.*, s.sname, c.lname from enrollments e, students s, courses c where e.scode=s.scode and e.lcode=c.lcode;
+
+/*수강신청 한 과목들을 학생별로 그룹핑하여 평균 점수를 구한 다음, 학생번호, 평균 점수를 성적이 높은 순으로 정렬하여 출력하시오.*/
+/*수강신청 과목들의 평균 점수가 85점 이상인 학생들의 학생번호, 평균 점수를 구하시오.*/
+/*강좌별 평균점수가 80점 이상인 강좌들의 강좌번호와 평균점수를 출력하시오.*/
+/*학생수가 3명 이상인 학과 구한 다음, 학과명, 학생수를 출력하시오.*/
+/*수강신청 평균점수가 85점 이상인 학생들의 학생번호, 학생이름, 평균 점수를 평균점수가 높은 순으로 출력하시오.*/
+/*강좌별 평균점수가 80점 이상인 강좌들의 강좌번호, 강좌명, 평균점수를 평균점수가 높은 순으로 출력하시오.*/
